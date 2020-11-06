@@ -13,3 +13,5 @@ while indeks < limit:
 
 if indeks == limit:
     print("nie")
+############################
+
