@@ -1,6 +1,6 @@
 import math
 
-(a, b, c) = (1, -5, 6)
+(a, b, c) = (0, 0, 0)
 
 x1 = None
 x2 = None
@@ -26,11 +26,14 @@ else:
         else:
             wiele = True
 
-if x1:
+if x1 is None:
     print("x1 =", x1)
-if x2:
+
+if x2 is None:
     print("x2 =", x2)
-if brak:
+
+if brak is None:
     print("Brak")
-if wiele:
+
+if wiele is None:
     print("Wiele")
