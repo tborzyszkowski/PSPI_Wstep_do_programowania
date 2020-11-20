@@ -1,6 +1,6 @@
 import a02fibo
 
-print a02fibo.fib(100000)
+print a02fibo.fib_rek(100000)
 print
 print
 a02fibo.fib_linear(100000)

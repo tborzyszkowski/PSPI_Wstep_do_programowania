@@ -14,7 +14,7 @@ def euklides(a, b):
         if a > b:
             a -= b
         else:
-            b -= a
+            b -= a # b = b - a
     return a
 
 
@@ -33,8 +33,8 @@ def nwd_list(lista):
 
 # print(reduce((lambda x, y: x + y), [1, 2, 3, 4] ))
 
-def nwd_list2(lista):
+def nwd_list2(*lista):
     return reduce(euklides, lista)
 
 
-print(nwd_list2([9, 6, 3]))
+print(nwd_list2(9, 6, 3, 6, 12, 24, 36))
