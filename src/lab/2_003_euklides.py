@@ -1,3 +1,5 @@
+from functools import reduce
+
 def nwd(a, b):
     if a == b:
         return a
@@ -29,5 +31,10 @@ def nwd_list(lista):
         return result
 
 
-print(nwd_list([9, 12, 3]))
-print(nwd_list([6]))
+# print(reduce((lambda x, y: x + y), [1, 2, 3, 4] ))
+
+def nwd_list2(lista):
+    return reduce(euklides, lista)
+
+
+print(nwd_list2([9, 6, 3]))
