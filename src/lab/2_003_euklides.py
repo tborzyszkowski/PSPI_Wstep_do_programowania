@@ -16,6 +16,18 @@ def euklides(a, b):
     return a
 
 
-print(nwd(9, 12), euklides(9, 12))
-print(nwd(10, 20), euklides(10, 20))
-print(nwd(30, 25), euklides(30, 25))
+def nwd_list(lista):
+    dlugosc = len(lista)
+    if dlugosc == 0:
+        return 0
+    elif dlugosc == 1:
+        return lista[0]
+    else:
+        result = nwd(lista[0], lista[1])
+        for el in lista[2:]:
+            result = nwd(result, el)
+        return result
+
+
+print(nwd_list([9, 12, 3]))
+print(nwd_list([6]))
