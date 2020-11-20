@@ -18,10 +18,10 @@ def suma_while(n):
     return result
 
 
-print(suma_while(1))
-print(suma_while(2))
-print(suma_while(3))
-print(suma_while(10))
+# print(suma_while(1))
+# print(suma_while(2))
+# print(suma_while(3))
+# print(suma_while(10))
 
 
 def suma_for(n):
@@ -30,7 +30,18 @@ def suma_for(n):
         result += element
     return result
 
-print(suma_for(1))
-print(suma_for(2))
-print(suma_for(3))
-print(suma_for(10))
+# print(suma_for(1))
+# print(suma_for(2))
+# print(suma_for(3))
+# print(suma_for(10))
+
+
+def suma_rek(n):
+    if n == 0:
+        print(0)
+        return 0
+    else:
+        print(n, " + suma(", n-1, ")")
+        return n + suma_rek(n-1)
+
+print(suma_rek(5))
