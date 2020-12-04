@@ -32,3 +32,19 @@ def usun_dane(dane, opcje):
             wartosc = float(wartosc)
         kryterium[k] = wartosc
     usun_wiersze_z_danych(dane, szukaj_po_kryterium(dane, kryterium))
+
+
+def aktualizuj_dane(dane, opcje):
+    kryterium = {"przedmiot": None, "klasa": None, "uczen": None, "ocena": None, "waga": None}
+    for k in kryterium:
+        wartosc = input("Podaj kryterium %s: " % k)
+        if wartosc and k == "waga":
+            wartosc = int(wartosc)
+        elif wartosc and k == "ocena":
+            wartosc = float(wartosc)
+        kryterium[k] = wartosc
+    dane_do_zmiany = szukaj_po_kryterium(dane, kryterium)
+    for d in dane_do_zmiany:
+        if d["ocena"] == 4.0:
+            d["ocena"] = 5.0
+    #usun_wiersze_z_danych(dane, szukaj_po_kryterium(dane, kryterium))
