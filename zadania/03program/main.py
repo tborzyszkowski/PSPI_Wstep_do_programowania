@@ -2,6 +2,8 @@ from dane import dane
 from wypisz_menu import wypisz_menu, wybierz_opcje
 from statystyka_ocen import wypisz_statystyke_ocen
 from sortuj import sortuj
+from dodaj_dane import dodaj_dane
+
 
 dane_programu = []
 
@@ -21,8 +23,9 @@ def wypisz_dane(dane, opcje):
 menu = {
     1: {"opis": "Wczytaj dane", "akcja": wczytaj_dane},
     2: {"opis": "Wypisz dane",  "akcja": wypisz_dane},
-    3: {"opis": "Stat ocen",    "akcja": wypisz_statystyke_ocen},
+    3: {"opis": "Statystyka ocen", "akcja": wypisz_statystyke_ocen},
     4: {"opis": "Sortowanie",   "akcja": sortuj},
+    5: {"opis": "Dodaj dane", "akcja": dodaj_dane},
     9: {"opis": "KONIEC",  "akcja": exit}
 }
 
