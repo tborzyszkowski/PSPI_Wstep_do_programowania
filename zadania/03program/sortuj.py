@@ -1,23 +1,14 @@
 from wypisz_menu import wypisz_menu, wybierz_opcje
 
-def kryterium_przedmiot(wiersz1, wiersz2):
-    kryterium_po_kolumnie(wiersz1, wiersz2, "przedmiot")
+def kryterium_przedmiot(wiersz):
+    return wiersz["przedmiot"]
 
 
-def kryterium_klasa(wiersz1, wiersz2):
-    kryterium_po_kolumnie(wiersz1, wiersz2, "klasa")
+def kryterium_klasa(wiersz):
+    return wiersz["klasa"]
 
-def kryterium_uczen(wiersz1, wiersz2):
-    kryterium_po_kolumnie(wiersz1, wiersz2, "uczen")
-
-
-def kryterium_po_kolumnie(wiersz1, wiersz2, kolumna):
-    if wiersz1[kolumna] < wiersz2[kolumna]:
-        return -1
-    elif wiersz1[kolumna] > wiersz2[kolumna]:
-        return 1
-    else:
-        return 0
+def kryterium_uczen(wiersz):
+    return wiersz["uczen"]
 
 
 menu_sortowanie= {
@@ -27,7 +18,7 @@ menu_sortowanie= {
 }
 
 def sortuj_wg_kryterium(dane, kryterium):
-    sorted(dane, cmp=kryterium)
+    dane.sort(key=kryterium)
 
 
 def sortuj(dane, opcje):
