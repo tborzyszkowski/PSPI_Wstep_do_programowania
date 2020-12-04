@@ -7,14 +7,20 @@ def kryterium_przedmiot(wiersz):
 def kryterium_klasa(wiersz):
     return wiersz["klasa"]
 
+
 def kryterium_uczen(wiersz):
     return wiersz["uczen"]
+
+
+def kryterium_klasa_przedmiot(wiersz):
+    return wiersz["klasa"], wiersz["przedmiot"]
 
 
 menu_sortowanie= {
     1: {"opis": "Po przedmiocie", "kryterium": kryterium_przedmiot},
     2: {"opis": "Po klasie", "kryterium": kryterium_klasa},
-    3: {"opis": "Po uczniu", "kryterium": kryterium_uczen}
+    3: {"opis": "Po uczniu", "kryterium": kryterium_uczen},
+    4: {"opis": "Po klasie, przedmiocie", "kryterium": kryterium_klasa_przedmiot}
 }
 
 def sortuj_wg_kryterium(dane, kryterium):
