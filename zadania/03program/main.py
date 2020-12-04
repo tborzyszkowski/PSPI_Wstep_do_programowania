@@ -1,10 +1,29 @@
 from dane import dane
+from statystyka_ocen import wypisz_statystyke_ocen
+
+
+dane_programu = []
+
+
+def wczytaj_dane(dane, opcje):
+    global dane_programu
+    dane_programu = dane
+    print("Wczytano: ", len(dane_programu), " wierszy")
+
+
+def wypisz_dane(dane, opcje):
+    print("przedmiot\t kl\t uczen\t ocena\t waga")
+    for wiersz in dane:
+        print("%s\t %s\t %s\t %s\t %s" % (wiersz["przedmiot"], wiersz["klasa"], wiersz["uczen"], wiersz["ocena"], wiersz["waga"]))
+
 
 menu = {
-    1: {"opis": "Wczytaj dane", "akcja": (lambda x, y: x)},
-    2: {"opis": "Wypisz dane",  "akcja": (lambda x, y: x)},
+    1: {"opis": "Wczytaj dane", "akcja": wczytaj_dane},
+    2: {"opis": "Wypisz dane",  "akcja": wypisz_dane},
+    3: {"opis": "Stat ocen",    "akcja": wypisz_statystyke_ocen},
     9: {"opis": "KONIEC",  "akcja": exit}
 }
+
 
 def wypisz_menu():
     for opcja in menu:
