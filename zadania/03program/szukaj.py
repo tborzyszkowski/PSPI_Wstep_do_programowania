@@ -21,13 +21,14 @@ def usun_wiersze_z_danych(dane, wiersze):
     for wiersz in wiersze:
         dane.remove(wiersz)
 
+
 def usun_dane(dane, opcje):
     kryterium = {"przedmiot": None, "klasa": None, "uczen": None, "ocena": None, "waga": None}
     for k in kryterium:
         wartosc = input("Podaj kryterium %s: " % k)
-        if wartosc == "waga":
+        if wartosc and k == "waga":
             wartosc = int(wartosc)
-        elif wartosc == "ocena":
+        elif wartosc and k == "ocena":
             wartosc = float(wartosc)
         kryterium[k] = wartosc
     usun_wiersze_z_danych(dane, szukaj_po_kryterium(dane, kryterium))
