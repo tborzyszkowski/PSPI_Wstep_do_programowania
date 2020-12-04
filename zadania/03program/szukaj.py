@@ -1,13 +1,13 @@
 def czy_wiersz_pasuje_do_kryterium(wiersz1, kryterium):
     pasuje = True
     for kol in kryterium:
-        if kryterium[kol]:
+        if kryterium[kol] and kol in wiersz1:
             if kryterium[kol] != wiersz1[kol]:
                 pasuje = False
     return pasuje
 
 
-# przykłąd kryterium
+# przyklad kryterium
 # kryterium = {"klasa": "1a", "uczen": "Jan"}
 def szukaj_po_kryterium(dane, kryterium):
     wynik = []
@@ -20,3 +20,14 @@ def szukaj_po_kryterium(dane, kryterium):
 def usun_wiersze_z_danych(dane, wiersze):
     for wiersz in wiersze:
         dane.remove(wiersz)
+
+def usun_dane(dane, opcje):
+    kryterium = {"przedmiot": None, "klasa": None, "uczen": None, "ocena": None, "waga": None}
+    for k in kryterium:
+        wartosc = input("Podaj kryterium %s: " % k)
+        if wartosc == "waga":
+            wartosc = int(wartosc)
+        elif wartosc == "ocena":
+            wartosc = float(wartosc)
+        kryterium[k] = wartosc
+    usun_wiersze_z_danych(dane, szukaj_po_kryterium(dane, kryterium))

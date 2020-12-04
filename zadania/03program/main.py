@@ -3,6 +3,7 @@ from wypisz_menu import wypisz_menu, wybierz_opcje
 from statystyka_ocen import wypisz_statystyke_ocen
 from sortuj import sortuj
 from dodaj_dane import dodaj_dane
+from szukaj import usun_dane
 
 
 dane_programu = []
@@ -26,6 +27,7 @@ menu = {
     3: {"opis": "Statystyka ocen", "akcja": wypisz_statystyke_ocen},
     4: {"opis": "Sortowanie",   "akcja": sortuj},
     5: {"opis": "Dodaj dane", "akcja": dodaj_dane},
+    6: {"opis": "Usun dane", "akcja": usun_dane},
     9: {"opis": "KONIEC",  "akcja": exit}
 }
 
