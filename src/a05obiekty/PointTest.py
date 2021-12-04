@@ -3,6 +3,7 @@ import unittest
 from .Point import *
 from math import sqrt
 
+
 class PointTestCase(unittest.TestCase):
 
     def test_set_x_positive(self):

@@ -13,3 +13,6 @@ class Knife(Tool):
 
     def can_sweep(self):
         return False
+
+    def can_fly(self):
+        return False
